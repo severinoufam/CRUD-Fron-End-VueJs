@@ -1,20 +1,22 @@
 <template>
   <div>
-    <!--Home Navbar-->
+    <!--Home NAVBAR-->
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-      <a class="navbar-brand order-md-last">CRUD VueJs + PostgreSQL + NodeJS</a>
+      <a class="navbar-brand order-md-last">Hospital</a>
       <ul class="navbar-nav mr-auto">
+        <!-- Rota cadastro paciente -->
         <li class="nav-item">
-          <router-link class="nav-link" to="/">Novo Médico</router-link>
+          <router-link class="nav-link" to="/">Novo Paciente</router-link>
         </li>
+        <!-- Rota lista paciente -->
         <li class="nav-item">
-          <router-link class="nav-link" to="/pages/list-doctor"
-            >Listar Médicos</router-link
+          <router-link class="nav-link" to="/pages/list-paciente"
+            >Listar pacientes</router-link
           >
         </li>
       </ul>
     </nav>
-    <!--End Navbar-->
+    <!-- FIM NAVBAR -->
     <div class="container mt-5">
       <router-view></router-view>
     </div>

@@ -7,35 +7,41 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '/',
-    name: 'New Doctor',
-    component: () => import('../components/pages/create-doctor/CreateDoctorComponent'),
+    name: 'create',
+    component: () => import('../components/pages/create-paciente/CreatePacienteComponent'),
   },
+
   {
-    path: '/list-doctor',
-    name: 'List All Doctor',
-    component: () => import('../components/pages/list-doctor/ListDoctorComponent'),
+    path: '/list-paciente',
+    name: 'list',
+    component: () => import('../components/pages/list-paciente/ListPacienteComponent'),
   },
+
   {
-    path: '/edit-doctor/:id',
-    name: 'Update Doctor',
-    component: () => import('../components/pages/edit-doctor/EditDoctorComponent'),
+    path: '/edit-paciente/:id',
+    name: 'update',
+    component: () => import('../components/pages/edit-paciente/EditPacienteComponent'),
   },
 ];
 
+/** BD */
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes,
 });
 
+
 router.beforeEach((to, from, next) => {
   if (to.name) {
+    /** Barra de carregamento de uma página */
     NProgress.start();
   }
   next();
 });
 
 router.afterEach((to, from) => {
+  /** Fim da brra de carregamento de uma página */
   NProgress.done();
 });
 
